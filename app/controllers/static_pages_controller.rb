@@ -28,6 +28,8 @@ class StaticPagesController < ApplicationController
     
    # json = Twitter.user_timeline("gem")
    # parsedJson = JSON.parse json
+   
+   array = Twitter.user_timeline("gem")
     
   end
   
