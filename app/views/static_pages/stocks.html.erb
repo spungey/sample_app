@@ -1,5 +1,10 @@
 <% require 'twitter' %>
 
 <p style="color:white;">
-<%= Twitter.user_timeline("stockwire24") %>
+<% Twitter.user_timeline("stockwire24").each 
+	do |key, value|
+    print key + ' = ' + value
+    print "\n"
+    end 
+ %>
 </p>
