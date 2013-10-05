@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
       config.oauth_token_secret = "FmvXp3MoqoMWIoezMjZYBoTSB1jMvyhha9Jxb4OuAE"
     end
     
-    Twitter.update("I'm tweeting with @gem!")
+    #Twitter.update("I'm tweeting with @gem!")
     
   end
 
