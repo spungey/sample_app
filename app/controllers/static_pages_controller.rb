@@ -1,4 +1,5 @@
 require 'twitter'
+require 'json'
 
 class StaticPagesController < ApplicationController
   def home
@@ -25,7 +26,8 @@ class StaticPagesController < ApplicationController
     #Twitter.update("I'm tweeting with @gem!")
     #Twitter.follow("stockwire24")
     
-    Twitter.list_timeline("stockwire24")
+    json = Twitter.user_timeline("gem")
+    parsedJson = JSON.parse json
     
   end
   
