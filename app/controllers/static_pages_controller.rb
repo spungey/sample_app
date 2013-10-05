@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
     #Twitter.update("I'm tweeting with @gem!")
     Twitter.follow("stockwire24")
     
-    Twitter.user_timeline("gem")
+    Twitter.list_timeline("gem")
     
   end
   
