@@ -1,10 +1,38 @@
-<% require 'twitter' %>
+<% require'twitter' 
+require 'rubygems'
+require 'httpclient'
 
-<p style="color:white;">
-<!-- <% Twitter.user_timeline("stockwire24").each 
-	do |key, value|
-    print key + ' = ' + value
-    print "\n"
-    end 
- %> -->
-</p>
+# client = HTTPClient.new
+# 
+# result = client.head(ARGV[0])
+# puts result.header['Location']
+
+longUrl = HTTPClient.new.head("http://bit.ly/GFscreener12").header['Location'][0]
+puts "Long URL is " +  longUrl
+
+%>
+
+<h1>Listing posts</h1>
+<% param  = params[:tag] %>
+<table> 
+	<tr>
+		<th>From User</th>
+		<th>Cashtag</th>
+		<th>Link</th>
+	</tr>
+	
+	
+	<% @posts = Twitter.user_timeline("stockwire24") %>
+	<% @posts.each do |post|
+		if post.text.include? param
+			myURI = URI.extract(post.text)
+			
+		 %>
+	<tr>
+		<td> <p style="color:white;"</p>stockwire24</p></td>
+		<td> <p style="color:white;"</p>        <%= param %></p></td>
+		<td> <p style="color:white;"</p><%= myURI %></p></td>
+	</tr>
+	<% end
+	end %>
+</table>

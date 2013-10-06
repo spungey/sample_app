@@ -1,5 +1,13 @@
 require 'twitter'
 require 'json'
+require 'uri'
+
+
+class FollowedUser
+  String name  
+end
+
+
 
 class StaticPagesController < ApplicationController
   def home
@@ -29,7 +37,23 @@ class StaticPagesController < ApplicationController
    # json = Twitter.user_timeline("gem")
    # parsedJson = JSON.parse json
    
-   array = Twitter.user_timeline("gem")
+   #array = Twitter.user_timeline("gem")
+   
+   
+  # This gets the specific user timelin, checks each tweet for X tag
+   # @posts = Twitter.user_timeline("stockwire24")
+    # .each do |tweet|
+      # if tweet.text.include? "$BAC"
+        # myURI = URI.extract(tweet.text)
+        # puts myURI
+      # end
+   # end
+#    
+   
+   
+   
+   
+   
     
   end
   
